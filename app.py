@@ -5,7 +5,7 @@ import pandas as pd
 from mlProject.pipeline.prediction import PredictionPipeline
 
 
-app = Flask(__name__) # initializing a flask app
+app = Flask(__name__)# initializing a flask app
 
 @app.route('/',methods=['GET'])  # route to display the home page
 def homePage():
@@ -36,7 +36,7 @@ def index():
             alcohol =float(request.form['alcohol'])
        
          
-            data = [fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol]
+            data = [fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol]
             data = np.array(data).reshape(1, 11)
             
             obj = PredictionPipeline()
